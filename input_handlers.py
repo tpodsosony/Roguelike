@@ -103,7 +103,7 @@ class GameOverEventHandler(EventHandler):
             action.perform()
 
     def ev_keydown(self, event: tcod.event.KeyDown) -> Optional[Action]:
-        action: Optional[Action] = none
+        action: Optional[Action] = None
 
         key = event.sym
 

@@ -8,9 +8,9 @@ import color
 
 class Message:
     def __init__(self, text: str, fg: Tuple[int, int, int]):
-        self.play_text = text
-        self.fg = fg
-        self.count = 1
+        self.plain_text = text #The text message
+        self.fg = fg #The forgeround color of the message
+        self.count = 1 #Amount of times a message repeats
 
     @property
     def full_text(self) -> str:
@@ -19,6 +19,7 @@ class Message:
             return f"{self.plain_text} (x{self.count})"
         return self.plain_text
 
+#Keeps list of messages recieved
 class MessageLog:
     def __init__(self) -> None:
         self.messages: List[Message] = []
@@ -31,7 +32,7 @@ class MessageLog:
         If 'stack' is True then the message can stack with a previous message
         of the same text.
         """
-        if stack and self.messages and text == self.message[-1].plain_text:
+        if stack and self.messages and text == self.messages[-1].plain_text:
             self.messages[-1].count += 1
         else:
             self.messages.append(Message(text, fg))
