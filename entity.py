@@ -122,7 +122,7 @@ class Item(Entity):
             char=char,
             color=color,
             name=name,
-            blocks_movement=false,
+            blocks_movement=False,
             render_order=RenderOrder.ITEM,
         )
 
