@@ -102,7 +102,7 @@ class Actor(Entity):
         self.fighter = fighter
         self.fighter.parent = self
     
-        self.inventory = Inventory
+        self.inventory = inventory
         self.inventory.parent = self
 
     @property
